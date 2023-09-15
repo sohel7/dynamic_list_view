@@ -36,6 +36,25 @@ class HomeActivity extends StatelessWidget{
    {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Alam"},
    {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Mamun"},
    {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Rabbil"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},  {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Sohel"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"RAna"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Alam"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Mamun"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Rabbil"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
+   {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
    {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
  ];
 
@@ -59,11 +78,16 @@ class HomeActivity extends StatelessWidget{
           IconButton(onPressed: (){MySnackBar("Settings", context);}, icon: Icon(Icons.settings)),
         ],
       ),
-body: ListView.builder(
+body: GridView.builder(
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 2,
+    crossAxisSpacing: 0,
+    childAspectRatio: 1.2
+  ),
   itemCount: MyItems.length,
   itemBuilder: (context,index){
     return GestureDetector(
-      onDoubleTap: (){MySnackBar(MyItems[index]['title'], context);},
+      onTap: (){MySnackBar(MyItems[index]['title'], context);},
       child: Container(
         margin: EdgeInsets.all(10),
         width: double.infinity,
