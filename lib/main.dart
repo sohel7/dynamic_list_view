@@ -1,26 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
-main(){
-  runApp( const MyApp());
-}
-
-class MyApp extends StatelessWidget{
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blue),
-      darkTheme: ThemeData(primarySwatch: Colors.blue ),
-      color: Colors.blue,
-      debugShowCheckedModeBanner: false,
-      home: HomeActivity(),
-    );
-  }
-}
-
-//  SHow Snackbar Message  IN AppBar
-//==================================
+//  SHow Snackbar Message  IN  List View
+//======================================
 class HomeActivity extends StatelessWidget{
    HomeActivity({super.key});
 
@@ -30,6 +10,9 @@ class HomeActivity extends StatelessWidget{
         SnackBar(content: Text(message))
     );
   }
+  
+  // JESON DATA FOR LOOPING
+  //============================
  var MyItems=[
    {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Sohel"},
    {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"RAna"},
@@ -39,26 +22,9 @@ class HomeActivity extends StatelessWidget{
    {"img":"https://pngset.com/images/twitter-heart-icon-clip-art-library-twitter-favorite-icon-balloon-pillow-transparent-png-2657148.png","title":"Salman"},
  ];
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Inventory"),
-        titleSpacing: 10,
-        toolbarHeight: 60,
-        toolbarOpacity: 1,
-        //elevation: 0,
-        elevation: 10,
-        backgroundColor: Colors.blue,
-
-        // ICON SET IN AppBar
-        actions: [
-          IconButton(onPressed: (){MySnackBar("message",context);}, icon: Icon(Icons.message)),
-          IconButton(onPressed: (){MySnackBar("Search",context);}, icon: Icon(Icons.search)),
-          IconButton(onPressed: (){MySnackBar("Settings", context);}, icon: Icon(Icons.settings)),
-        ],
-      ),
+    return Scaffold(    
 body: ListView.builder(
   itemCount: MyItems.length,
   itemBuilder: (context,index){
